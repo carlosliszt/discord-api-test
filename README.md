@@ -39,8 +39,7 @@ Este projeto é uma integração entre um servidor Minecraft e o Discord, permit
 
 ## Estrutura do Projeto
 - `public/index.php`: Endpoint principal para autenticação e vinculação
-- `public/success.php`: Página de sucesso após vinculação
-- `public/success.html`: Página de sucesso estática (não utilizada se usar success.php)
+- `public/success.html`: Página de sucesso
 - `src/`: Código-fonte adicional (se necessário)
 - `vendor/`: Dependências do Composer
 
