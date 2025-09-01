@@ -1,0 +1,20 @@
+{
+    "name": "carlos/discord-api-test",
+    "autoload": {
+        "psr-4": {
+            "Carlos\\DiscordApiTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "carlos"
+        }
+    ],
+    "require": {
+        "bramus/router": "^1.6",
+        "guzzlehttp/guzzle": "^7.9",
+        "vlucas/phpdotenv": "^5.6",
+      "ext-mysqli": "*",
+        "predis/predis": "^3.0"
+    }
+}
