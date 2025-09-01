@@ -6,7 +6,6 @@ Este projeto é uma integração entre um servidor Minecraft e o Discord, permit
 - Autenticação OAuth2 com Discord
 - Vinculação de conta Minecraft com Discord
 - Publicação de eventos em canal Redis
-- Interface de sucesso estilizada com Bootstrap e estética inspirada no Discord
 
 ## Requisitos
 - PHP >= 7.4
@@ -18,7 +17,7 @@ Este projeto é uma integração entre um servidor Minecraft e o Discord, permit
 ## Instalação
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/discord-api-test.git
+   git clone https://github.com/carlosliszt/discord-api-test.git
    cd discord-api-test
    ```
 2. Instale as dependências:
@@ -54,7 +53,9 @@ Este projeto é uma integração entre um servidor Minecraft e o Discord, permit
 - As variáveis de ambiente são configuradas no `.env`.
 
 ## Licença
-MIT
+
+Este projeto está licenciado sob a Licença GNU Affero General Public License v3.0 - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
 
 ---
 
