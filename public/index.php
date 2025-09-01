@@ -23,16 +23,28 @@ try {
     $discord_client_secret = getEnvVar('DISCORD_CLIENT_SECRET');
     $redirect_uri = getEnvVar('DISCORD_REDIRECT_URI');
 
-    $db = new mysqli('localhost', 'root', '', 'minecraft');
+    $db_host = getEnvVar('DB_HOST');
+    $db_name = getEnvVar('DB_DATABASE');
+    $db_user = getEnvVar('DB_USERNAME');
+    $db_pass = getEnvVar('DB_PASSWORD');
+
+    $db = new mysqli($db_host, $db_user, $db_pass, $db_name);
     if ($db->connect_error) {
         throw new Exception('Erro ao conectar ao banco de dados: ' . $db->connect_error);
     }
 
-    $redis = new Predis\Client([
+    $redis_host = getEnvVar('REDIS_HOST');
+    $redis_port = getEnvVar('REDIS_PORT');
+    $redis_password = getenv('REDIS_PASSWORD') ?: null;
+    $redis_config = [
         'scheme' => 'tcp',
-        'host'   => '127.0.0.1',
-        'port'   => 6379,
-    ]);
+        'host'   => $redis_host,
+        'port'   => $redis_port
+    ];
+    if (!empty($redis_password)) {
+        $redis_config['password'] = $redis_password;
+    }
+    $redis = new Predis\Client($redis_config);
 
     $code = $_GET['code'] ?? null;
     $state = $_GET['state'] ?? null;
